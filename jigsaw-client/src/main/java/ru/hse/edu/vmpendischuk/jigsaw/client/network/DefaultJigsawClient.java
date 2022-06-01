@@ -250,9 +250,11 @@ public class DefaultJigsawClient implements JigsawClient {
 
             String message = inputStream.readUTF();
 
-            while (!message.equals("READY")) {
+            while (message.equals("NOT READY")) {
                 message = inputStream.readUTF();
             }
+
+            otherUsername = message;
 
             handler.onSuccess();
         } catch (Exception ex) {

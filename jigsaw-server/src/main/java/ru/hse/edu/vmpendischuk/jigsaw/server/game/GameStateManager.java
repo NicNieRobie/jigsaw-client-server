@@ -99,6 +99,8 @@ public class GameStateManager {
                 disconnectedPlayersCount++;
             }
 
+            logger.log(Level.INFO, "Player count: " + currentPlayerCount);
+
             if (currentPlayerCount == 0) {
                 reset();
             }
@@ -109,6 +111,8 @@ public class GameStateManager {
      * Resets the game state to allow the game to restart.
      */
     public void reset() {
+        logger.log(Level.INFO, "RESET");
+
         disconnectedPlayersCount = 0;
         finishedPlayerCount = 0;
 
@@ -142,6 +146,12 @@ public class GameStateManager {
 
         playerStats.put(username, stats);
         finishedPlayerCount++;
+
+        try {
+            resultsRepository.addRecord(new PlayerStatsEntry(stats, username));
+        } catch (SQLException ex) {
+            logger.log(Level.SEVERE, "Could not save a record in the database", ex);
+        }
 
         if (finishedPlayerCount == playerCount - disconnectedPlayersCount) {
             currentPlayerCount = 0;
@@ -209,14 +219,6 @@ public class GameStateManager {
             PlayerStats stats = entry.getValue();
             return new PlayerStatsEntry(stats, entry.getKey());
         }).toList();
-
-        for (PlayerStatsEntry entry : entries) {
-            try {
-                resultsRepository.addRecord(entry);
-            } catch (SQLException ex) {
-                logger.log(Level.SEVERE, "Could not save a record in the database", ex);
-            }
-        }
 
         return new GameResults(winner, entries, disconnectedPlayers.stream().toList());
     }

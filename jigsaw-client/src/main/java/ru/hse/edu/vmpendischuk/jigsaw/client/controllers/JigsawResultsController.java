@@ -71,6 +71,8 @@ public class JigsawResultsController {
         colTime.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().time()));
         disconnectedPlayersLabel.setVisible(false);
 
+        finishLoadingVBox.setVisible(true);
+
         // Finishing the game for current player.
         new Thread(() -> client.finishGameForPlayer(shapeCount, time, new GameFinishCallbackHandler() {
             @Override

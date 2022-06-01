@@ -85,7 +85,9 @@ public class JigsawServer {
             try {
                 Connection connection = DriverManager.getConnection(dbUrl);
                 urlIsValid = true;
-            } catch (SQLException ignored) { }
+            } catch (SQLException ex) {
+                logger.log(Level.WARNING, "DB connection error: " + ex.getSQLState());
+            }
         } while (!urlIsValid);
 
         // Initializing the game state manager.
@@ -207,7 +209,7 @@ public class JigsawServer {
                             outputStream.flush();
                         }
 
-                        outputStream.writeUTF("READY");
+                        outputStream.writeUTF(gameStateManager.getAnotherPlayer(username));
                         outputStream.flush();
                     }
                     case "TOP" -> {

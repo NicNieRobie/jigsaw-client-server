@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="402.0" prefWidth="578.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.hse.edu.vmpendischuk.jigsaw.client.controllers.JigsawResultsController">
+<AnchorPane prefHeight="402.0" prefWidth="578.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.hse.edu.vmpendischuk.jigsaw.client.controllers.JigsawResultsController">
     <HBox alignment="CENTER" prefHeight="75.0" prefWidth="578.0" spacing="60.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <Button mnemonicParsing="false" onAction="#newGameButtonClickHandler" prefHeight="35.0" prefWidth="100.0" styleClass="action-button, new-game-button" text="New game" />
       <Button layoutX="169.0" layoutY="30.0" mnemonicParsing="false" onAction="#topGamesButtonClickHandler" prefHeight="35.0" prefWidth="150.0" styleClass="action-button, top-10-button" text="Top 10 games" />
@@ -34,7 +34,7 @@
       <Label fx:id="disconnectedPlayersLabel" styleClass="error-label" text="Disconnected players:" visible="false" />
       <Label fx:id="errorLabel" styleClass="error-label" text="ERROR" visible="false" />
     </VBox>
-    <VBox fx:id="finishLoadingVBox" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="white-bg" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <VBox fx:id="finishLoadingVBox" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="white-bg" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <children>
             <ProgressIndicator>
                 <VBox.margin>
