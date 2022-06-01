@@ -1,0 +1,10 @@
+----------------------------------------------------------------
+Wed Jun 01 03:01:47 MSK 2022D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0181-1c91-8334-00000f3c5848, [2] C:\Users\Vlad\Desktop\jigsaw\jigsaw-server\testDb, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@5ba23b66, [4] file:/C:/Users/Vlad/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=17.0.2+8-86
+user.dir=C:\Users\Vlad\Desktop\jigsaw\jigsaw-server
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+C005 : [0] 

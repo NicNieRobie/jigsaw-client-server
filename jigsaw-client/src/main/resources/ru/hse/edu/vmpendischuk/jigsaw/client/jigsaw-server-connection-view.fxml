@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="402.0" prefWidth="578.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.hse.edu.vmpendischuk.jigsaw.client.controllers.JigsawConnectController">
+    <HBox alignment="CENTER" prefHeight="75.0" prefWidth="578.0" spacing="60.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Button mnemonicParsing="false" onAction="#connectButtonClickHandler" prefHeight="35.0" prefWidth="100.0" styleClass="action-button, new-game-button" text="Connect" />
+        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#exitButtonClickHandler" prefHeight="35.0" prefWidth="100.0" styleClass="action-button, exit-button" text="Exit" />
+    </HBox>
+   <HBox fx:id="continueHBox" alignment="CENTER" layoutX="10.0" layoutY="337.0" prefHeight="75.0" prefWidth="578.0" spacing="60.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <children>
+         <Button mnemonicParsing="false" onAction="#continueButtonClickHandler" prefHeight="35.0" prefWidth="100.0" styleClass="action-button, new-game-button" text="Continue" />
+         <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#exitButtonClickHandler" prefHeight="35.0" prefWidth="100.0" styleClass="action-button, exit-button" text="Exit" />
+      </children>
+   </HBox>
+    <Label alignment="CENTER" text="JIGSAW" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+        <font>
+          <Font name="System Bold" size="25.0" />
+        </font>
+    </Label>
+    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" styleClass="results-container" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="90.0">
+      <Label text="Connect to the server" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <TextField fx:id="ipField" prefHeight="25.0" prefWidth="65.0" promptText="IP address">
+         <VBox.margin>
+            <Insets left="30.0" right="30.0" />
+         </VBox.margin>
+      </TextField>
+      <TextField fx:id="portField" promptText="Port">
+         <VBox.margin>
+            <Insets left="30.0" right="30.0" />
+         </VBox.margin>
+      </TextField>
+      <Label fx:id="connectionErrorLabel" layoutX="183.0" layoutY="121.0" styleClass="error-label" text="Error" textFill="darkred" visible="false" />
+    </VBox>
+   <VBox fx:id="welcomeVBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" styleClass="results-container" visible="false" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="90.0">
+      <children>
+         <Label text="Welcome! Enter your username:" textAlignment="CENTER">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Label>
+         <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="65.0" promptText="Username">
+            <VBox.margin>
+               <Insets left="30.0" right="30.0" />
+            </VBox.margin>
+         </TextField>
+         <Label fx:id="registerErrorLabel" layoutX="183.0" layoutY="121.0" styleClass="error-label" text="Error" textFill="darkred" visible="false" />
+         <Button mnemonicParsing="false" onAction="#topGamesButtonClickHandler" prefHeight="35.0" prefWidth="150.0" styleClass="action-button,top-10-button" text="Top 10 games" />
+      </children>
+   </VBox>
+    <VBox fx:id="playerLoadingVBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="white-bg" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <ProgressIndicator>
+            <VBox.margin>
+               <Insets bottom="20.0" />
+            </VBox.margin>
+         </ProgressIndicator>
+         <Label text="Waiting for players to join..." textFill="#0084ff">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+      </children></VBox>
+   <VBox fx:id="connectionLoadingVBox" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="white-bg" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <ProgressIndicator>
+            <VBox.margin>
+               <Insets bottom="20.0" />
+            </VBox.margin>
+         </ProgressIndicator>
+         <Label text="Waiting for connection..." textFill="#0084ff">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+      </children>
+   </VBox>
+</AnchorPane>

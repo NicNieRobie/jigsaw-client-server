@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox prefHeight="402.0" prefWidth="578.0" spacing="30.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.hse.edu.vmpendischuk.jigsaw.client.controllers.JigsawGameController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <GridPane fx:id="grid" alignment="CENTER" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDropped="#onDragDropped" onDragOver="#onDragOver" prefHeight="382.0" prefWidth="382.0">
+      <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+   </GridPane>
+   <VBox prefHeight="200.0" prefWidth="100.0">
+      <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Next shape" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </Label>
+      <GridPane fx:id="shapeGrid" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#onDragDetected" onDragDropped="#onDragDropped" onDragOver="#onDragOver" prefHeight="129.0" prefWidth="127.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+         </rowConstraints>
+      </GridPane>
+      <Label fx:id="usernameLabel" alignment="CENTER" layoutX="10.0" layoutY="186.0" maxWidth="1.7976931348623157E308" text="Username" textAlignment="CENTER">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="vsLabel" alignment="CENTER" layoutX="10.0" layoutY="169.0" maxWidth="1.7976931348623157E308" text="vs" textAlignment="CENTER" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="otherUsernameLabel" alignment="CENTER" layoutX="10.0" layoutY="169.0" maxWidth="1.7976931348623157E308" text="Opponent" textAlignment="CENTER">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <padding>
+            <Insets bottom="20.0" />
+         </padding>
+      </Label>
+      <Label fx:id="shapesLabel" alignment="CENTER" layoutX="10.0" layoutY="169.0" maxWidth="1.7976931348623157E308" text="Score: 0" textAlignment="CENTER">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="maxDurationLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Max time: 0 s" textAlignment="CENTER">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding></Label>
+      <Label fx:id="timeLabel" alignment="CENTER" layoutX="10.0" layoutY="169.0" maxWidth="1.7976931348623157E308" text="00:00:00" textAlignment="CENTER">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#finishButtonClickHandler" text="Finish" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" top="20.0" />
+         </VBox.margin>
+      </Button>
+   </VBox>
+</HBox>

@@ -1,0 +1,63 @@
+.new-game-button {
+    -fx-background-color: green;
+    -fx-text-fill: white;
+}
+
+.exit-button {
+    -fx-background-color: red;
+}
+
+.error-label .text {
+    -fx-text-fill: DARKRED;
+    -fx-font-size: 11;
+    -fx-font-style: ITALIC;
+}
+
+.action-button {
+    -fx-text-fill: white;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+}
+
+.top-10-button {
+    -fx-background-color: royalblue;
+    -fx-text-fill: white;
+}
+
+.results-container {
+    -fx-background-radius: 10;
+    -fx-background-color: dodgerblue;
+}
+
+.results-container .label {
+    -fx-text-fill: white;
+    -fx-font-size: 17;
+}
+
+.rectangle-pane {
+    -fx-border-color: BLACK;
+    -fx-border-width: 1;
+    -fx-border-insets: -1;
+}
+
+.active-rectangle-pane {
+    -fx-background-color: DODGERBLUE;
+}
+
+.inactive-rectangle-pane {
+    -fx-background-color: WHITE;
+}
+
+.white-bg {
+    -fx-background-color: WHITE;
+}
+
+.table-view .column-header,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+    -fx-background-color: grey;
+}
+
+.table-view .column-header .text {
+    -fx-font-size: 13;
+}
