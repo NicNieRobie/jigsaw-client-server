@@ -22,7 +22,7 @@ and the server are located in the **scripts** folder:
 
 ### Configuration
 
-The Jigsaw server will ask the used to specify the following configuration
+The Jigsaw server will ask the user to specify the following configuration
 information on startup:
 * The port on which the server will serve the clients;
 * The amount of players in the game;
